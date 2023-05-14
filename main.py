@@ -139,7 +139,7 @@ def main():
         clear_terminal()
         print('1. Stationary')
         print('2. Gift')
-        print('3. others')
+        print('3. Gifts and Toys')
         x = input('Choose which you want to alter? Enter number : ').strip()
         clear_terminal()
         match x:
@@ -148,6 +148,8 @@ def main():
             case '2':
                 a = fileClass('gifts.csv')
             case '3':
+                a = fileClass('toys_and_dolls.csv')
+            case '4':
                 a = fileClass('others.csv')
         print("1. Show all Items")
         print("2. Add a new Item")
