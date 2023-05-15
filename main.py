@@ -45,18 +45,19 @@ class fileClass:
             flag = False
             temp_list = list(fil)
             for i in temp_list:
-                if i[1] == name:
+                if i[1].lower() == name:
+                    flag = True
                     o = temp_list.index(i)
                     temp_list.remove(i)
-
-            for j in range(o,len(temp_list)):
-                temp_list[j][0] = int(temp_list[j][0])-1
-                
-        with open(self.filename, 'w', newline="") as f:
-            c = csv.writer(f)
-            for i in temp_list:
-                c.writerow(i)
-        print("Item sucessfully Deleted! ")
+                    for j in range(o,len(temp_list)):
+                        temp_list[j][0] = int(temp_list[j][0])-1
+                    with open(self.filename, 'w', newline="") as f:
+                        c = csv.writer(f)
+                        for i in temp_list:
+                            c.writerow(i)
+                        print("Item sucessfully Deleted! ")
+            if flag == False:
+                print('Item not found')
         input()
 
     def edit_Itemname(self,sn,name): 
