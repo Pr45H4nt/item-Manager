@@ -44,7 +44,6 @@ class fileClass:
             fil = csv.reader(f)
             flag = False
             temp_list = list(fil)
-            print(temp_list)
             for i in temp_list:
                 if i[1] == name:
                     o = temp_list.index(i)
@@ -139,7 +138,8 @@ def main():
         clear_terminal()
         print('1. Stationary')
         print('2. Gift')
-        print('3. Gifts and Toys')
+        print('3. Toys and dolls')
+        print('4. others')
         x = input('Choose which you want to alter? Enter number : ').strip()
         clear_terminal()
         match x:
@@ -162,7 +162,7 @@ def main():
             case '1':
                 a.display_all_items()
             case '2':
-                a.add_new_item(input('name: '), int(input('quantity: ')),int(input('Cost Price: ')),int(input('Selling Price: ')) )
+                a.add_new_item(input('name: '), int(input('quantity: ')),float(input('Cost Price: ')),float(input('Selling Price: ')) )
                 clear_terminal()
             case '3':
                 clear_terminal()
