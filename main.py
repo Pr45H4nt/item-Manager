@@ -163,7 +163,7 @@ def main():
             case '1':
                 a.display_all_items()
             case '2':
-                a.add_new_item(input('name: '), int(input('quantity: ')),float(input('Cost Price: ')),float(input('Selling Price: ')) )
+                a.add_new_item(input('name: ').lower(), int(input('quantity: ')),float(input('Cost Price: ')),float(input('Selling Price: ')) )
                 clear_terminal()
             case '3':
                 clear_terminal()
@@ -186,19 +186,19 @@ def main():
                 y = input("What do you want to edit?: ")
                 match y:
                     case '1':
-                        a.edit_Itemname(sn=sn , name =input("New Name: "))
+                        a.edit_Itemname(sn=sn , name =input("New Name: ").lower())
                     case '2':
-                        a.edit_quantity(sn=sn , qty= input("New quantity: "))
+                        a.edit_quantity(sn=sn , qty= input("New quantity: ").lower())
                     case '3':
-                        a.edit_cp(sn=sn , cp= input("New CP: "))
+                        a.edit_cp(sn=sn , cp= input("New CP: ").lower())
                     case '4':
-                        a.edit_sp(sn=sn , SP= input("New SP: "))
+                        a.edit_sp(sn=sn , SP= input("New SP: ").lower())
                 input()
                 clear_terminal()
                 print('Item sucessfully updated!')
             case '5':
                 a.display_all_items()
-                name = input('Name of the Item: ')
+                name = input('Name of the Item: ').lower().strip()
                 a.sold(name, int(input('How many pieces are sold?: ').strip()))
                 print()
                 a.search_by(1,name)
