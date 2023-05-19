@@ -1,2 +1,2 @@
 # item-Manager
-It is a specific program for specific purpose
+Track Your products (for specific work)
