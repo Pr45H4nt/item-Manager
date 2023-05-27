@@ -108,10 +108,18 @@ class fileClass:
         with open(self.filename) as f:
             fil = csv.reader(f)
             flag = False
-            for i in fil:
-                if i[int(arg)].lower() == what:
-                    print(f'sn = {i[0]} \t item = {i[1]} \t quantity = {i[2]} \t cp = {i[3]} \t sp = {i[4]}')
-                    flag = True
+            if arg == 1:
+                print("searching by name.....")
+                for i in fil:
+                    if what in i[1]:
+                        print(f'sn = {i[0]} \t item = {i[1]} \t quantity = {i[2]} \t cp = {i[3]} \t sp = {i[4]}')
+                        flag = True
+            else:
+
+                for i in fil:
+                    if i[int(arg)].lower() == what:
+                        print(f'sn = {i[0]} \t item = {i[1]} \t quantity = {i[2]} \t cp = {i[3]} \t sp = {i[4]}')
+                        flag = True
             if flag == False:
                 print("Item not found or spelling is error.You can try manually checking the file")
             input()
